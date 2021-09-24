@@ -1,0 +1,73 @@
+#include<stdio.h>
+//Flores Castillo Cesar Roberto
+
+int main(void){
+	int n, d, i=0, r[999];
+	int e=1;
+	
+	while(e==1){
+		
+	 printf("Digite un numero decimal\n");
+	 scanf("%d",&n);
+	
+	 printf("A que base desea convertir:\n (1)Binario\n (2)Octal\n (3)Hexadecimal\n");
+	 scanf("%d",&d);
+	
+	 switch(d)
+	 {
+		case 1:
+			printf("BINARIO\n");
+			while (n!=0)
+			{
+				r[i]=n%2;
+				n=n/2;
+				i++;
+			}
+			i--;
+			printf("El resultado es:\n");
+			while(i>=0)
+			{
+				printf("%i",r[i]);
+				i--;
+			}
+			break;
+		case 2:
+			printf("OCTAL\n");
+			while(n!=0)
+			{
+				r[i]=n%8;
+				n=n/8;
+				i++;
+			}
+			i--;
+			printf("El resultado es:\n");
+			while(i>=0)
+			{
+				printf("%i",r[i]);
+				i--;
+			}
+			break;
+		case 3:
+			printf("HEXADECIMAL\n");
+			while(n!=0)
+			{
+				r[i]=n%16;
+				n=n/16;
+				i++;
+			}
+			i--;
+			printf("%d",i);
+			printf("El resultado es:\n");
+			while(i>=0)
+			{
+				printf("%i",r[i]);
+				i--;
+			}
+			break;
+	 }
+	 printf("\nQuieres convertir otro numero\n SI(1) NO(2)\n");
+	 scanf("%d",&e);
+	}
+	printf("Gracias por usar la conversion de decimal");
+	return 0;
+}
